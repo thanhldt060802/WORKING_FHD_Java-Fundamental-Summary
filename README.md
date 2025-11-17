@@ -1,1 +1,1 @@
-<h1 align="center">JAVA-FUNDAMENTAL-EXTENSION</h1>
+<h1 align="center">JAVA-FUNDAMENTAL-SUMMARY-PROJECTS</h1>
