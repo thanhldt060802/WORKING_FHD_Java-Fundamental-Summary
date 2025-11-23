@@ -1,0 +1,61 @@
+### Java ###
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.ipr
+*.iws
+*.log
+*.ctxt
+hs_err_pid*
+
+# Build output
+/bin/
+/build/
+/out/
+/target/
+/dist/
+/.gradle/
+/.mvn/wrapper/maven-wrapper.jar
+
+### IntelliJ IDEA ###
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+### Eclipse ###
+.project
+.classpath
+.settings/
+.loadpath
+.factorypath
+.springBeans
+.recommenders
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+/.history/
+
+### OS-specific ###
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
