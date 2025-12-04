@@ -64,33 +64,31 @@ public class Task {
     }
 
     /*
-     * Câu A3 - Trung bình:
+     * Câu B1 - Trung bình:
      * - Mô tả: Lọc sinh viên có điểm trung bình trên các môn học ghi nhận lớn hơn hoặc bằng 8.0.
-     * - Trả về: Map với key là mã số sinh viên, value là điểm trung bình tính được của sinh viên đó.
+     * - Trả về: Map với key sinh viên, value là điểm trung bình tính được của sinh viên đó.
      */
-    public Map<Long, Double> A3() {
-        // Map<Long, Double> result = this.enrollments.stream()
-        //     .collect(Collectors
-        //         .groupingBy(
-        //             (enrollment) -> enrollment.getStudentId()))
-        //     .entrySet()
-        //     .stream()
-        //     .collect(Collectors
-        //         .toMap(
-        //             (entry) -> entry.getKey(),
-        //             (entry) -> entry.getValue().stream()
-        //                 .mapToDouble(
-        //                     (enrollment) -> enrollment.getScore())
-        //                 .average()
-        //                 .getAsDouble()));
-
-        Map<Long, Double> result = this.enrollments.stream()
+    public Map<Student, Double> B1() {
+        Map<Long, Double> gpaMap = this.enrollments.stream()
             .collect(Collectors
                 .groupingBy(
                     (enrollment) -> enrollment.getStudentId(),
                     Collectors
                         .averagingDouble(
                             (enrollment) -> enrollment.getScore())));
+
+        Map<Student, Double> result = this.students.stream()
+            .filter(
+                (student) -> {
+                    Double gpa = gpaMap.get(student.getId());
+                    if (gpa != null) {
+                        return gpa >= 8.0;
+                    }
+                    return false;
+                })
+            .collect(Collectors.toMap(
+                (student) -> student,
+                (student) -> gpaMap.get(student.getId())));
 
         return result;
     }

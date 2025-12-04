@@ -9,15 +9,12 @@ import mockdata.MockData;
 public class Main {
 
     public enum TaskName {
-        A1, A2, A3, A4, A5, A6,
-        B1, B2, B3, B4, B5, B6,
-        C1, C2, C3, C4, C5, C6,
-        D1, D2, D3, D4, D5, D6,
-        E1, E2, E3, E4, E5, E6,
-        F1, F2, F3, F4, F5, F6
+        A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12,
+        B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12,
+        C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12,
     }
 
-    private static final TaskName TASK_CHOOSEN = TaskName.A3;
+    private static final TaskName TASK_CHOOSEN = TaskName.B1;
 
     public static void main(String[] args) {
 
@@ -45,11 +42,11 @@ public class Main {
                 }
                 break;
             }
-            case TaskName.A3: {
-                Map<Long, Double> result = task.A3();
+            case TaskName.B1: {
+                Map<Student, Double> result = task.B1();
                 if (result != null) {
                     result.forEach(
-                        (studentId, studentGpa) -> System.out.println(String.format("Id=%d, GPA=%f", studentId, studentGpa)));
+                        (student, studentGpa) -> System.out.println(String.format("Student=%s, GPA=%f", student, studentGpa)));
                 }
                 break;
             }
